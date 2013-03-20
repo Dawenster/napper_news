@@ -1,0 +1,8 @@
+<% @comments.each do |c| %>
+  <ul>
+    <li><a href= "/comment/<%= c.id %>">link</a></li>
+    <li><%= c.created_at %></li>
+    <li><%= c.user.email %></li>
+    <li><%= c.content %>
+  </ul>
+<% end  %>

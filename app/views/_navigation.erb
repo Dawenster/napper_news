@@ -1,0 +1,10 @@
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/comment/all">All comments</a></li>
+  <% if get_current_user %>
+    <li><a href="/post/new">Create a post</a></li>
+    <li><a href="/user/logout">Logout</a></li>
+  <% else %>
+    <li><a href="/user/login">Login/Sign up</a></li>
+  <% end %>
+</ul>

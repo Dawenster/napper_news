@@ -22,13 +22,14 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  def login
-    @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      give_token
+  def self.login(email, password)
+    @user = User.find_by_email(email)
+    if @user && @user.password == password
+      @user
     else
-      redirect_to home_url
+      false
     end
   end
+  
 
 end

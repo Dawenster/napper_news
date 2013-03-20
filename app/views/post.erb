@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+
+<% unless @post.comments.empty? %>
+  <% @post.comments.each do |c| %>
+  <ul>
+    <li>Created at: <%= c.created_at %></li>
+    <li>Posted by: <%= c.user.email %></li>
+    <li><a href= "/comment/<%= c.id %>">Link</a></li>
+    <li><%= c.content %></a>
+  </ul>
+  <% end  %>
+<% else %>
+  <h2>Hope you get some comments soon!</h2>
+<% end %>
