@@ -1,11 +1,15 @@
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/comment/all">All comments</a></li>
-  <% if get_current_user %>
-    <li><a href="/post/new">Create a post</a></li>
-    <li><a href="/user/profile">Profile</a></li>
-    <li><a href="/user/logout">Logout</a></li>
-  <% else %>
-    <li><a href="/user/login">Login/Sign up</a></li>
-  <% end %>
-</ul>
+<div class="navbar navbar-fixed-top dw-nav">
+  <div class="navbar-inner">
+  	<a class="brand" href="/">Napper News</a>
+		<ul class="nav">
+		  <li><a href="/comment/all">All comments</a></li>
+		  <% if get_current_user %>
+		    <li><a href="/post/new">Create a post</a></li>
+		    <li><a href="/user/profile">Profile</a></li>
+		    <li><a href="/user/logout">Logout</a></li>
+		  <% else %>
+		    <li><a href="/user/login">Login/Sign up</a></li>
+		  <% end %>
+		</ul>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-<h1>Create a Post</h1>
+<div class="page-header"><h1>Create a Post</h1></div>
 
 <% if @post %>
   <% @post.errors.full_messages.each do |error| %>
@@ -6,12 +6,15 @@
   <% end %>
 <% end %>
 
-
-<form action="/post/new" method="post" class="login-box">
-  <input type="text" name="title" class="input-small" placeholder="Title">
-  <input type="text" name="url" class="input-small" placeholder="http://yoururl.com">
-  <textarea name="text" cols="25" rows="5">Your napper news here</textarea>
-  <input type="submit" value="Create" class="btn">
-</form>
+<div class="create-post">
+	<form action="/post/new" method="post" class="login-box">
+		<fieldset>
+		  <div><input type="text" name="title" class="input-large" placeholder="Title"></div>
+		  <div><input type="text" name="url" class="input-large" placeholder="http://your-url.com"></div>
+		  <div><textarea name="text" cols="25" rows="5">Your napper news here</textarea></div>
+		  <div><input type="submit" value="Create" class="btn"></div>
+		</fieldset>
+	</form>
+<div>
 
 Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the comments page. If there is a url, the text will be ignored.

@@ -14,7 +14,7 @@ require 'faker'
 require 'pg'
 require 'active_record'
 require 'logger'
-
+require 'paginate'
 require 'sinatra'
 require "sinatra/reloader" if development?
 

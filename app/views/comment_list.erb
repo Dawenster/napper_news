@@ -1,8 +1,7 @@
+
 <% @comments.each do |c| %>
-  <ul>
-    <li><a href= "/comment/<%= c.id %>">link</a></li>
-    <li><%= c.created_at %></li>
-    <li><%= c.user.email %></li>
-    <li><%= c.content %>
-  </ul>
+  <div class="hero-unit">
+    <p><b>Created on <%= c.created_at.strftime('%B %d, %Y') %> by <%= c.user.email %></b> | <a href= "/comment/<%= c.id %>">link</a> | <a href="/post/<%= c.post.id %>">parent</a></p>
+    <p><%= c.content %></p>
+  </div>
 <% end  %>
