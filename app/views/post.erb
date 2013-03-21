@@ -1,4 +1,20 @@
-<h1><%= @post.title %></h1>
+<h1><a href='<%= @post.url %>'><%= @post.title %></a></h1><%= @post.url if @post.url %>
+<p><%= @post.post_votes.count %> by <%= @post.user.email %> | <%= @post.comments.count %></p>
+
+<form action="/vote/post/<%= @post.id %>/new" method="post" class="login-box">
+  <input type="submit" value="Vote" class="btn">
+</form>
+
+<% if @comment %>
+  <% @comment.errors.full_messages.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<form action="/comment/new/<%= @post.id %>" method="post" class="login-box">
+  <textarea name="content" cols="25" rows="5">Your pity comment</textarea><br>
+  <input type="submit" value="Add comment" class="btn">
+</form>
 
 <% unless @post.comments.empty? %>
   <% @post.comments.each do |c| %>
@@ -6,7 +22,11 @@
     <li>Created at: <%= c.created_at %></li>
     <li>Posted by: <%= c.user.email %></li>
     <li><a href= "/comment/<%= c.id %>">Link</a></li>
-    <li><%= c.content %></a>
+    <li><%= c.content %></li>
+    <li><%= c.comment_votes.count %></li>
+    <li><form action="/vote/post/<%= @post.id %>/new" method="post" class="login-box">
+        <input type="submit" value="Vote" class="btn">
+        </form></li>
   </ul>
   <% end  %>
 <% else %>
