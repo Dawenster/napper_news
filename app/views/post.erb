@@ -24,7 +24,7 @@
     <li><a href= "/comment/<%= c.id %>">Link</a></li>
     <li><%= c.content %></li>
     <li><%= c.comment_votes.count %></li>
-    <li><form action="/vote/post/<%= @post.id %>/new" method="post" class="login-box">
+    <li><form action="/vote/comment/<%= c.id %>/new" method="post" class="login-box">
         <input type="submit" value="Vote" class="btn">
         </form></li>
   </ul>
