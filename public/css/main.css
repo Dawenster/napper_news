@@ -1,0 +1,29 @@
+body {
+	padding-top: 40px;
+}
+
+.dw-css a.brand {
+	margin-left: 5px;
+}
+
+.dw-css .hero-unit {
+	margin: 20px;
+	padding: 10px;
+	width: 720px;
+}
+
+.dw-css h1, .dw-css h2 {
+	padding-left: 25px;
+}
+
+.dw-css .create-post {
+	padding-left: 25px;
+}
+
+.dw-css div.profile-page a {
+	padding-left: 25px;
+}
+
+.dw-css .specific-post {
+	padding-left: 25px;
+}

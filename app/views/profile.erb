@@ -1,0 +1,15 @@
+<div class="page-header"><h1>Welcome to your homepage <%= @user.email %>!</h1></div>
+
+<h2>Here are the posts you've made:</h2>
+
+	
+	<% @user.posts.each do |post| %>
+		<div class="profile-page"><a href="/post/<%= post.id %>"><%= post.title %></a><%= " (" + post.url + ")" if post.url %></div>
+	<% end %>
+	
+
+<h2>Here are the comments you've made:</h2>
+
+	<% @user.comments.each do |comment| %>
+		<div class="profile-page"><a href="/comment/<%= comment.id %>"><%= comment.content %></a></div>
+	<% end %>
