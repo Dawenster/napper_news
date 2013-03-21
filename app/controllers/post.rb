@@ -1,5 +1,9 @@
 get '/post/new' do
-  erb :create_post
+  if get_current_user
+    erb :create_post
+  else
+    redirect '/user/login'
+  end
 end
 
 post '/post/new' do
@@ -14,6 +18,7 @@ end
 
 get '/post/:id' do
   @post = Post.find(params[:id])
+  @current_user = get_current_user
   erb :post
 end
 
