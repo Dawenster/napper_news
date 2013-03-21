@@ -18,7 +18,7 @@ end
 
 get '/post/:id' do
   @post = Post.find(params[:id])
-  @current_user = get_current_user
+  @user = get_current_user
   erb :post
 end
 

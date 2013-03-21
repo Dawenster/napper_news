@@ -1,7 +1,7 @@
-<h1><a href='<%= @post.url %>'><%= @post.title %></a></h1><%= @post.url if @post.url %>
-<p><%= @post.post_votes.count %> by <%= @post.user.email %> | <%= @post.comments.count %></p>
+<h1><a href='<%= @post.url %>'><%= @post.title %></a></h1><%= " (" + @post.url + ")" if @post.url %>
+<p><%= @post.post_votes.count %> votes.  Created by <%= @post.user.email %> | <%= @post.comments.count %> comments</p>
 
-<% if @current_user %>
+<% if @user %>
 
 <form action="/vote/post/<%= @post.id %>/new" method="post" class="login-box">
   <input type="submit" value="Vote" class="btn">
@@ -30,7 +30,7 @@
     <li><%= c.content %></li>
     <li><%= c.comment_votes.count %></li>
     
-    <% if @comment %>
+    <% if @user %>
 
     <li><form action="/vote/comment/<%= c.id %>/new" method="post" class="login-box">
         <input type="submit" value="Vote" class="btn">

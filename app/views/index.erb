@@ -1,6 +1,6 @@
 <% @posts.each do |p| %>
   <ul>
-    <li><a href= "<%= p.url %>"><%= p.title %></a></li>
+    <li><a href= "<%= p.url %>"><%= p.title %></a><%= " (" + p.url + ")" if p.url %></li>
     <li><%= p.created_at %></li>
     <li><a href="/post/<%= p.id %>"><%= p.comments.count %> comments</a>
   </ul>

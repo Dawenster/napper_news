@@ -28,3 +28,7 @@ get '/user/logout' do
   redirect '/'
 end
 
+get '/user/profile' do
+  @user = get_current_user
+  erb :profile
+end
